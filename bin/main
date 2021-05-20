@@ -63,6 +63,7 @@ unless board.include?(number)
  i = 9
 while i <= 9
   puts box
+  puts "#{one} Its your turn"
   puts count = gets.chomp.to_i
   if [1, 2, 3].include? count
     puts 'Game over!'
