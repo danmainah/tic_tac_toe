@@ -7,7 +7,7 @@ puts box = "+---+---+---+ \n| 1 | 2 | 3 | \n+---+---+---+ \n
 
 puts 'Lets start the game!'
 # players enter their name to begin the game
-puts 'Enter Player 1 name: '
+puts "\nEnter Player 1 name: "
 one = gets.chomp.strip
 
 if one.empty?
