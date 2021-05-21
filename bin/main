@@ -7,7 +7,7 @@ puts box = "+---+---+---+ \n| 1 | 2 | 3 | \n+---+---+---+ \n
 
 puts 'Lets start the game!'
 # players enter their name to begin the game
-puts "\nEnter Player 1 name: "
+puts "\nEnter Player1 name: "
 one = gets.chomp.strip
 
 if one.empty?
@@ -21,7 +21,7 @@ elsif one.length < 4
   one = gets.chomp
 end
 
-puts 'Enter Player 1 name: '
+puts 'Enter Player2 name: '
 two = gets.chomp.strip
 
 if two.empty?
@@ -63,19 +63,22 @@ until board.include?(number)
   number = gets.chomp.to_i
 end
 
-# determing the outcome of the game
-i = 9
-while i <= 9
+game_on = true
+puts 'During each turn a player is allowed to pick a number between 1-9,on each round the number must be unique'
+
+while game_on
   puts box
   puts "#{one} Its your turn"
-  puts count = gets.chomp.to_i
+  count = gets.chomp.to_i
   if [1, 2, 3].include? count
     puts 'Game over!'
     puts "The winner is #{one} !"
   elsif [4, 5, 6].include? count
+    puts 'Game over!'
     puts "The winner is #{two} !"
   else
-    puts "It's tie! \n Game over"
+    puts 'Game over!'
+    puts 'Its a draw'
   end
-  i += 1
+  game_on = false
 end
