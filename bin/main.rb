@@ -51,3 +51,77 @@ puts "\n #{one} starts the game"
 
 $one = one
 $two = two
+
+class Game
+    WINNING_COMBOS = [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [0, 4, 8],
+      [6, 4, 2]
+    ].freeze
+    def intitialize
+      @gameboard = Board.new
+      @players = Players.new
+    end
+  
+    # move method handles the actual gameplay
+    def move
+      @end = false
+      @players = Players.new
+      @gameboard = Board.new
+      @turn = 1
+      while @turn < 10
+        if @turn.odd?
+          change_turn(@players.player1, 'X')
+        elsif @turn.even?
+          change_turn(@players.player2, 'O')
+        end
+      end
+    end
+  
+    # change_turn method handles position choice and switching player turns
+    def change_turn(player, symbol)
+      puts "#{player}(#{symbol}) please choose a position"
+      @player_move = gets.chomp.to_i
+      if (0..8).include?(@player_move) && @gameboard.board[@player_move] == ' ' && @end == false
+        @turn += 1
+        @gameboard.board_update(@player_move, symbol)
+        win
+        draw
+      else
+        puts "Please enter a number between 0 to 8 in an untaken location\n"
+      end
+    end
+  
+    def win
+      WINNING_COMBOS.each do |win|
+        next unless (@gameboard.board[win[0]] == @gameboard.board[win[1]] &&
+          @gameboard.board[win[1]] == @gameboard.board[win[2]]) &&
+                    @gameboard.board[win[0]] != ' '
+  
+        case @gameboard.board[win[0]]
+        when 'X'
+          puts "#{@players.player1} WINS"
+          @turn = 10
+          @end = true
+        when 'O'
+          puts "#{@players.player2} WINS"
+          @turn = 10
+          @end = true
+        end
+      end
+    end
+  
+    # method to determine if all the positions are filled without a victory
+    def draw
+      puts "It's a draw" if @turn == 10 && @end == false
+    end
+  end
+  
+  game = Game.new
+  game.move
+  
