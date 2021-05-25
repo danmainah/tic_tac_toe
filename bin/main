@@ -1,18 +1,11 @@
 #!/usr/bin/env ruby
 
-require './lib/player'
-require './lib/board'
-
-puts 'Lets start the game!'
-
 puts 'Welcome to Ruby  Tic Tac Toe game '
 
-puts '0 | 1 | 2'
-puts '---------'
-puts '3 | 4 | 5'
-puts '---------'
-puts '6 | 7 | 8'
+puts box = "+---+---+---+ \n| 1 | 2 | 3 | \n+---+---+---+ \n
+| 4 | 5 | 6 |\n+---+---+---+\n| 7 | 8 | 9 |\n+---+---+---+ \n"
 
+puts 'Lets start the game!'
 # players enter their name to begin the game
 puts "\nEnter Player1 name: "
 one = gets.chomp.strip
@@ -34,7 +27,7 @@ two = gets.chomp.strip
 if two.empty?
   puts "Player name cant be an empty,enter player's name"
   two = gets.chomp
-elsif two.to_i.to_s.eql? two
+elsif two.to_i.to_s.eql? one
   puts 'Use only text no numbers: '
   two = gets.chomp
 elsif two.length < 4
@@ -48,3 +41,4 @@ end
 puts "#{one} will play with x and #{two} with 0"
 
 puts "\n #{one} starts the game"
+
