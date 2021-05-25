@@ -41,3 +41,4 @@ end
 puts "#{one} will play with x and #{two} with 0"
 
 puts "\n #{one} starts the game"
+
