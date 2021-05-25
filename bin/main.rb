@@ -66,6 +66,41 @@ def change_turn(player, symbol)
     end
   end
   
+  WIN_NUM = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [6, 4, 2]
+  ]
+  
+  @players = Players.new(one, two)
+  # check for a win
+  def win
+    WIN_NUM.each do |win|
+      next unless (@gameboard.board[win[0]] == @gameboard.board[win[1]] &&
+        @gameboard.board[win[1]] == @gameboard.board[win[2]]) &&
+                  @gameboard.board[win[0]] != ' '
+  
+      case @gameboard.board[win[0]]
+      when 'X'
+        puts "#{@players.player1} WINS"
+        @turn = 10
+        @end = true
+      when 'O'
+        puts "#{@players.player2} WINS"
+        @turn = 10
+        @end = true
+      end
+    end
+  end
+  # check for a draw
+  def draw
+    puts "It's a draw" if @turn == 10 && @end == false
+  end
   # gameplay method
   def move
     @end = false
