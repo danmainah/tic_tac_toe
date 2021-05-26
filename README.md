@@ -1,8 +1,10 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
+
 # Tic Tac Toe Project
 
-> The project is basically creating  the Tic Tac Toe game.
+A tic-tac-toe game on the command line where two human players can play against each other and the board is displayed in between turns, created with Ruby.
+
 
 ## Built With
 
@@ -14,7 +16,7 @@
 ### To get a local copy and play game
 
 ### Prerequisites
-
+- For usage ensure you have ruby installed
 - Text editor
 - GitHub
 - Git
@@ -26,6 +28,10 @@
 - In your local PC, open your terminal in the folder you would like to clone the repository into
 - Clone the repository with the command: `git clone (copied link)`; like so: `git clone https://github.com/1v4n4/TicTacToe`
 - After the clone, type in the command `cd TicTacToe` to access the directory on the terminal
+
+
+### About Tic tac toe
+ It is a game played by two players where they choose random numbers between 1 to 9. The first player takes X and the second player takes O. The first player who matches three spots in a horizontal, vertical, or diagonal row is the winner. When the spots on the board are all marked with no matches, then, the game ends in a draw.
 
 #### Play the game
 
