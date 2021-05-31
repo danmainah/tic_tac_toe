@@ -13,3 +13,12 @@ describe '#Board' do
       expect(true).to eql(true)
     end
   end
+
+  context '#game_board_display' do
+    it 'displays board when game is ongoing with updated position' do
+      @board = 2
+      Board.new.game_board_display(@board) && Board.new.game_board_display(board)
+      expect(true).to eql(true)
+    end
+  end
+end
