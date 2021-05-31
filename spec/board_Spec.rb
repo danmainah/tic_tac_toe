@@ -6,3 +6,10 @@ describe '#Board' do
       expect(true).to eql(true)
     end
   end
+
+  context '#board_update' do
+    it 'checks if board has been updated' do
+      Board.new.board_update(2, 'X') && Board.new.game_board_display(@board)
+      expect(true).to eql(true)
+    end
+  end
