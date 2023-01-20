@@ -1,5 +1,3 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
-
 
 # Tic Tac Toe Project
 
@@ -40,6 +38,8 @@ A tic-tac-toe game on the command line where two human players can play against 
 - Players will take turns marking their spots on the board.
 - The first player who matches three spots in a horizontal, vertical, or diagonal row. is the winner.
 - When the spots on the board are all marked with no matches, then, the game ends in a draw.
+
+<h3><b>Author</b></h3>
 
 ## 👤 **Daniel maina**
 
